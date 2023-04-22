@@ -123,7 +123,7 @@ namespace SPH
                 ParticleDistance = spacing,
                 ParticleMass = 1,
                 MinIterations = 1,
-                MaxIterations = 1,
+                MaxIterations = 2,
                 MaxDensityErrorFactor = 0.05f
             };
 
@@ -154,7 +154,7 @@ namespace SPH
             if (running)
             {
                 var gravity = particles.Select(particle => new Vector2(0, -1)).ToArray();
-                sph.Step(particles, gravity, 0.07f);
+                sph.Step(particles, gravity, 0.12f);
             }
         }
 

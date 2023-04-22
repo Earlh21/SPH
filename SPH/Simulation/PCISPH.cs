@@ -86,6 +86,8 @@ namespace SPH.Simulation
                     predicted_positions[i] = particles[i].Position + timestep / 2 * predicted_velocities[i];
                 });
 
+                max_error = 0;
+
                 //Predict density and update pressure
                 Parallel.For(0, particles.Length, ParallelOptions, i =>
                 {
